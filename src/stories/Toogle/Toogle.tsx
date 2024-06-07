@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '../utils/cn';
+import { cn } from '../../utils/cn';
 import { useState } from 'react';
 
 export const Toogle = () => {
