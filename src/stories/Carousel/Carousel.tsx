@@ -52,7 +52,7 @@ const Item = ({ currentItem, direction }: {
                     initial={{ x: direction === 'right' ? 1 * width : 1 * (-width) }}
                     animate={{ x: 0 }}
                     exit={{ x: direction === 'right' ? 1 * (-width) : 1 * width }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                     <div className="w-96 rounded shadow-lg">
                         <img className="w-full h-64" src={currentItem.image} alt="Sunset in the mountains" />
