@@ -16,62 +16,60 @@ export const note =
 
 const paths = [lightning, hand, plane, heart, star, note];
 const hexColors = [
-    '#FFD700', // Lightning: Yellow
-    '#FF4500', // Hand: Orange Red
-    '#1E90FF', // Plane: Blue
-    '#FF0000', // Heart: Red
-    '#FFEA00', // Star: Another Yellow (slightly different from lightning for variation)
-    '#000000' // Note: Black
+  "#FFD700", // Lightning: Yellow
+  "#FF4500", // Hand: Orange Red
+  "#1E90FF", // Plane: Blue
+  "#FF0000", // Heart: Red
+  "#FFEA00", // Star: Another Yellow (slightly different from lightning for variation)
+  "#000000", // Note: Black
 ];
 
-
 export const SvgMorph = () => {
-    const [index, setIndex] = useState(0);
-    const [path, setPath] = useState<string>(paths[0]);
-    const [color, setColor] = useState<string>(hexColors[0]);
+  const [index, setIndex] = useState(0);
+  const [path, setPath] = useState<string>(paths[0]);
+  const [color, setColor] = useState<string>(hexColors[0]);
 
-    const onAnimate = () => {
-        const currentPath = paths[index];
-        const newIndex = index === 5 ? 0 : index + 1;
-        const newPath = paths[newIndex];
-        const newColor = hexColors[newIndex];
+  const onAnimate = () => {
+    const currentPath = paths[index];
+    const newIndex = index === 5 ? 0 : index + 1;
+    const newPath = paths[newIndex];
+    const newColor = hexColors[newIndex];
 
-        if (currentPath) {
-            const interpolator = interpolate(currentPath, newPath, { maxSegmentLength: 0.1 });
-            setColor(newColor);
-        
-            const updatePath = async () => {
-                // incrementally update path data using flubber interpolator
-                for (let t = 0; t <= 1; t += 0.02) {
-                    await new Promise(resolve => setTimeout(resolve, 20)); // delay for smooth animation
-                    setPath(interpolator(t));
-                }
-            };
+    if (currentPath) {
+      const interpolator = interpolate(currentPath, newPath, {
+        maxSegmentLength: 0.1,
+      });
+      setColor(newColor);
 
-            updatePath();
+      const updatePath = async () => {
+        // incrementally update path data using flubber interpolator
+        for (let t = 0; t <= 1; t += 0.02) {
+          await new Promise((resolve) => setTimeout(resolve, 20)); // delay for smooth animation
+          setPath(interpolator(t));
         }
+      };
 
-        setIndex(newIndex);
-    };
+      updatePath();
+    }
 
-    return (
-        <div className="w-full h-full flex flex-col gap-4 items-center justify-center">
-            <svg width="400" height="400">
-                <g transform="translate(10 10) scale(17 17)">
-                    <motion.path
-                        fill={color}
-                        d={path}
-                        transition={{ duration: 0.8, ease: "easeInOut" }}
-                    />
-                </g>
-            </svg>
+    setIndex(newIndex);
+  };
 
-            <button 
-                className="w-24 h-12 border border-black p-2" 
-                onClick={onAnimate}
-            >
-                Animate
-            </button>
-        </div>
-    );
-}
+  return (
+    <div className="w-full h-full flex flex-col gap-4 items-center justify-center">
+      <svg width="400" height="400">
+        <g transform="translate(10 10) scale(17 17)">
+          <motion.path
+            fill={color}
+            d={path}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          />
+        </g>
+      </svg>
+
+      <button className="w-24 h-12 border border-black p-2" onClick={onAnimate}>
+        Animate
+      </button>
+    </div>
+  );
+};
