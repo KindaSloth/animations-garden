@@ -14,19 +14,31 @@ export const lightning = "M7 2v11h3v9l7-12h-4l4-8z";
 export const note =
   "M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z";
 
-const paths = [lightning, hand, plane, heart, note, star];
+const paths = [lightning, hand, plane, heart, star, note];
+const hexColors = [
+    '#FFD700', // Lightning: Yellow
+    '#FF4500', // Hand: Orange Red
+    '#1E90FF', // Plane: Blue
+    '#FF0000', // Heart: Red
+    '#FFEA00', // Star: Another Yellow (slightly different from lightning for variation)
+    '#000000' // Note: Black
+];
+
 
 export const SvgMorph = () => {
     const [index, setIndex] = useState(0);
     const [path, setPath] = useState<string>(paths[0]);
+    const [color, setColor] = useState<string>(hexColors[0]);
 
     const onAnimate = () => {
         const currentPath = paths[index];
         const newIndex = index === 5 ? 0 : index + 1;
         const newPath = paths[newIndex];
+        const newColor = hexColors[newIndex];
 
         if (currentPath) {
             const interpolator = interpolate(currentPath, newPath, { maxSegmentLength: 0.1 });
+            setColor(newColor);
         
             const updatePath = async () => {
                 // incrementally update path data using flubber interpolator
@@ -47,8 +59,9 @@ export const SvgMorph = () => {
             <svg width="400" height="400">
                 <g transform="translate(10 10) scale(17 17)">
                     <motion.path
+                        fill={color}
                         d={path}
-                        transition={{ duration: 1, ease: "easeInOut" }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
                     />
                 </g>
             </svg>
