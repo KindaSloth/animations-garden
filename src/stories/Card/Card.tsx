@@ -46,7 +46,7 @@ export const PokemonCard = () => {
                 rel="noreferrer noopener"
               >
                 <img
-                  src="https://image.lexica.art/md2_webp/d837ff35-1df0-4a24-a646-faa83428ff21"
+                  src="/charmander.png"
                   alt="Charmander"
                   className=" object-cover"
                 />
