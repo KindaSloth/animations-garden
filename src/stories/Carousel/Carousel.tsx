@@ -12,19 +12,19 @@ const items: {
 }[] = [
     {
         id: 0,
-        image: "https://images.unsplash.com/photo-1717297808345-b740e9846158",
+        image: "/cherry-trees.jpeg",
         title: "Cherry trees",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil."
     },
     {
         id: 1,
-        image: "https://images.unsplash.com/photo-1422493757035-1e5e03968f95",
+        image: "/sunset.jpeg",
         title: "The Coldest Sunset",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil."
     },
     {
         id: 2,
-        image: "https://images.unsplash.com/photo-1526069824293-406685e85766",
+        image: "/porsche.jpeg",
         title: "Porsche",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil."
     }
@@ -52,7 +52,7 @@ const Item = ({ currentItem, direction }: {
                     initial={{ x: direction === 'right' ? 1 * width : 1 * (-width) }}
                     animate={{ x: 0 }}
                     exit={{ x: direction === 'right' ? 1 * (-width) : 1 * width }}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.2 }}
                 >
                     <div className="w-96 rounded shadow-lg">
                         <img className="w-full h-64" src={currentItem.image} alt="Sunset in the mountains" />
