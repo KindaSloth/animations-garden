@@ -14,7 +14,7 @@ export const PokemonCard = () => {
             initial={{ rotateY: 90 }}
             animate={{ rotateY: 0 }}
             exit={{ rotateY: 90 }}
-            transition={{ duration: 0.35 }}
+            transition={{ duration: 0.35, delay: 0.1 }}
           >
             <p className="text-white text-lg font-bold">Hover me</p>
           </motion.div>
@@ -30,7 +30,7 @@ export const PokemonCard = () => {
             initial={{ rotateY: -90 }}
             animate={{ rotateY: 0 }}
             exit={{ rotateY: -90 }}
-            transition={{ duration: 0.35 }}
+            transition={{ duration: 0.35,  delay: 0.1  }}
           >
             <div>
               <h3 className="text-left pb-4 pt-2 text-xl font-bold">
@@ -46,7 +46,7 @@ export const PokemonCard = () => {
                 rel="noreferrer noopener"
               >
                 <img
-                  src="/charmander.png"
+                  src="https://github.com/KindaSloth/animations-garden/blob/main/public/charmander.png?raw=true"
                   alt="Charmander"
                   className=" object-cover"
                 />

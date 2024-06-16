@@ -12,19 +12,19 @@ const items: {
 }[] = [
     {
         id: 0,
-        image: "/cherry-trees.jpeg",
+        image: "https://github.com/KindaSloth/animations-garden/blob/main/public/cherry-trees.jpeg?raw=true",
         title: "Cherry trees",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil."
     },
     {
         id: 1,
-        image: "/sunset.jpeg",
+        image: "https://github.com/KindaSloth/animations-garden/blob/main/public/sunset.jpeg?raw=true",
         title: "The Coldest Sunset",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil."
     },
     {
         id: 2,
-        image: "/porsche.jpeg",
+        image: "https://github.com/KindaSloth/animations-garden/blob/main/public/porsche.jpeg?raw=true",
         title: "Porsche",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil."
     }
