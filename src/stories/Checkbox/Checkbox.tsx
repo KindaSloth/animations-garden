@@ -25,7 +25,7 @@ export const Checkbox = () => {
                             borderColor: 'rgb(107 114 128 / 1)'
                         }
                         }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     className="relative h-5 w-5 cursor-pointer appearance-none rounded-sm border transition-all"
                     id="checkbox"
                     checked={active}

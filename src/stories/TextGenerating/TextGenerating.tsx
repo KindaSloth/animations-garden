@@ -7,7 +7,7 @@ export const TextGenerating = () => {
     const [ref, animate] = useAnimate();
 
     useEffect(() => {
-        animate('span', { opacity: 1 }, { delay: stagger(0.1) });
+        animate('span', { opacity: 1 }, { delay: stagger(0.1), ease: "easeInOut" });
     }, [animate]);
 
     return (

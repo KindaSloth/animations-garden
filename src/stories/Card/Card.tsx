@@ -30,7 +30,7 @@ export const PokemonCard = () => {
             initial={{ rotateY: -90 }}
             animate={{ rotateY: 0 }}
             exit={{ rotateY: -90 }}
-            transition={{ duration: 0.35,  delay: 0.1  }}
+            transition={{ duration: 0.35,  delay: 0.1, ease: 'easeOut'  }}
           >
             <div>
               <h3 className="text-left pb-4 pt-2 text-xl font-bold">

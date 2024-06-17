@@ -21,7 +21,7 @@ export const Modal = () => {
                             initial={{ opacity: 0.1, scale: 0.5 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0 }}
-                            transition={{ duration: 0.5 }}
+                            transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
                             className={cn(
                                 "w-[500px] h-96 p-6",
                                 "bg-white border border-gray-300 rounded-md shadow-2xl"

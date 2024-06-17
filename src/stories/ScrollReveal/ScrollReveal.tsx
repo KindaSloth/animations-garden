@@ -69,12 +69,14 @@ export const ScrollReveal = () => {
               <motion.h2 
                 className="text-2xl font-bold text-slate-100"
                 animate={{ opacity: currentIdx === index ? 1 : 0.25 }}
+                transition={{ ease: "easeInOut" }}
               >
                 {item.title}
               </motion.h2>
               <motion.p 
                 className="text-kg text-slate-300 max-w-sm mt-10"
                 animate={{ opacity: currentIdx === index ? 1 : 0.25 }}
+                transition={{ ease: "easeInOut" }}
               >
                 {item.description}
               </motion.p>

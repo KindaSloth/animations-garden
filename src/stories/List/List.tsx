@@ -43,7 +43,7 @@ export const List = () => {
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: "auto", transition: { type: 'spring', bounce: 0.3 }}}
                                 exit={{ opacity: 0, height: 0, transition: { type: 'spring', bounce: 0.3 }}}
-                                transition={{ duration: 0.4, type: 'spring', bounce: 0 }}
+                                transition={{ duration: 0.4, type: 'spring', bounce: 0.2 }}
                             >
                                 <p className="w-full text-grey-darkest">{item.value}</p>
                                 <button 
